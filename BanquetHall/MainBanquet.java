@@ -24,10 +24,6 @@ public class MainBanquet {
 		System.out.print("Enter the total no. of Guests:");
 		int noOfGuests = sc.nextInt();
 
-		if (obj.guestNoVerify(noOfGuests)) {
-
-			System.out.println("maximum capacity is 400,please try again");
-		}
 		// Calculate service cess
 		double serviceCess = obj.calculateCess(noOfGuests, totalBaseCost);
 		System.out.println("service cess is:" + serviceCess);

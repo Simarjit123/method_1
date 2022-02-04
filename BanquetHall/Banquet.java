@@ -17,7 +17,7 @@ public class Banquet {
 	double calculateBaseCost(double baseBookingCost, double foodCost, double beverageCost, double tipCost) {
 		this.baseBookingCost = baseBookingCost;
 		this.foodCost = foodCost;
-		this.beveragTax = beverageCost;
+		this.beverageCost = beverageCost;
 		this.tipCost = tipCost;
 		totalBaseCost = baseBookingCost + foodCost + beverageCost + tipCost;
 		return totalBaseCost;
@@ -29,22 +29,15 @@ public class Banquet {
 
 	}
 
-	boolean guestNoVerify(int noOfGuests) {
-		if (noOfGuests > 400) {
-			return true;
-		}
-		return false;
-	}
-
 	double calculateCess(int noOfGuests, double totalBaseCost) {
 		double cessPercent = 0;
 		if (noOfGuests <= 40) {
-			cessPercent = 0.4 * totalBaseCost;
-		} else if (noOfGuests <= 80) {
-			cessPercent = 0.8 * totalBaseCost;
-		} else if (noOfGuests <= 150) {
-			cessPercent = 0.1 * totalBaseCost;
-		} else if (noOfGuests > 150) {
+			cessPercent = 0.04 * totalBaseCost;
+		} else if (noOfGuests > 40 && noOfGuests <= 80) {
+			cessPercent = 0.08 * totalBaseCost;
+		} else if (noOfGuests > 80 && noOfGuests <= 150) {
+			cessPercent = 0.10 * totalBaseCost;
+		} else {
 			cessPercent = 0.125 * totalBaseCost;
 		}
 		return cessPercent;
