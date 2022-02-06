@@ -1,5 +1,5 @@
-
 public class Banquet {
+
 	double baseBookingCost;
 	double foodCost;
 	double beverageCost;
@@ -11,7 +11,8 @@ public class Banquet {
 	double serviceCess;
 	int noOfGuests;
 
-	Banquet() {
+	public Banquet() {
+
 	}
 
 	double calculateBaseCost(double baseBookingCost, double foodCost, double beverageCost, double tipCost) {
@@ -23,13 +24,45 @@ public class Banquet {
 		return totalBaseCost;
 	}
 
-	double calculateTax(double calculateBaseCost) {
+	public void setBaseBookingCost(double baseBookingCost) {
+		this.baseBookingCost = baseBookingCost;
+	}
+
+	public void setFoodCost(double foodCost) {
+		this.foodCost = foodCost;
+	}
+
+	public void setBeverageCost(double bevarageCost) {
+		this.beverageCost = bevarageCost;
+	}
+
+	public void setTipCost(double tipCost) {
+		this.tipCost = tipCost;
+	}
+
+	public double getBaseBookingCost() {
+		return baseBookingCost;
+	}
+
+	public double getFoodCost() {
+		return foodCost;
+	}
+
+	public double getBeverageCost() {
+		return beverageCost;
+	}
+
+	public double getTipCost() {
+		return tipCost;
+	}
+
+	private double calculateTax(double calculateBaseCost) {
 		totalTax = totalBaseCost * 0.05;
 		return totalTax;
 
 	}
 
-	double calculateCess(int noOfGuests, double totalBaseCost) {
+	private double calculateCess(int noOfGuests, double totalBaseCost) {
 		double cessPercent = 0;
 		if (noOfGuests <= 40) {
 			cessPercent = 0.04 * totalBaseCost;
@@ -43,9 +76,13 @@ public class Banquet {
 		return cessPercent;
 	}
 
-	double calculateTheTotalCost(double totalBaseCost, double totalTax, double cessPercent) {
-		double totalCost = totalBaseCost + totalTax + cessPercent;
-		return totalCost;
+	double calculateTheTotalCost(double calculatetotalcost) {
+
+		calculatetotalcost = totalBaseCost + totalTax + serviceCess;
+		return calculatetotalcost;
 
 	}
+
+
+
 }
