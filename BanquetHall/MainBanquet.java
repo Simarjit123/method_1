@@ -62,6 +62,7 @@ public class MainBanquet {
 		} else {
 			System.out.println("base cost can't be zero");
 		}
-		System.out.println("Total cost is:"+obj.calculateTheTotalCost(0));
+		System.out.println(
+				"Total cost is:" + obj.calculateTheTotalCost(obj.totalBaseCost, obj.totalTax, obj.serviceCess));
 	}
 }

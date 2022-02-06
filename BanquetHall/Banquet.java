@@ -76,13 +76,21 @@ public class Banquet {
 		return cessPercent;
 	}
 
-	double calculateTheTotalCost(double calculatetotalcost) {
+	/*
+	 * double calculateTheTotalCost(double calculatetotalcost) {
+	 * 
+	 * calculatetotalcost = totalBaseCost + totalTax + serviceCess; return
+	 * calculatetotalcost;
+	 * 
+	 * }
+	 */
 
-		calculatetotalcost = totalBaseCost + totalTax + serviceCess;
-		return calculatetotalcost;
+	double calculateTheTotalCost(double totalBaseCost, double totalTax, double cessPercent) {
+		totalTax = calculateTax(totalBaseCost);
+		serviceCess = calculateCess(noOfGuests, totalBaseCost);
+		double totalCost = totalBaseCost + totalTax + cessPercent;
+		return totalCost;
 
 	}
-
-
 
 }
